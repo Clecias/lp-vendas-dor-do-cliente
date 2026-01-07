@@ -44,6 +44,41 @@ const integrationBadges = [
   'CRM'
 ];
 
+const integrationLogos = [
+  {
+    name: 'WhatsApp',
+    src: 'https://cdn.simpleicons.org/whatsapp/25D366'
+  },
+  {
+    name: 'Shopify',
+    src: 'https://cdn.simpleicons.org/shopify/95BF47'
+  },
+  {
+    name: 'WooCommerce',
+    src: 'https://cdn.simpleicons.org/woocommerce/96588A'
+  },
+  {
+    name: 'Mercado Pago',
+    src: 'https://cdn.simpleicons.org/mercadopago/00B1EA'
+  },
+  {
+    name: 'PagSeguro',
+    src: 'https://cdn.simpleicons.org/pagseguro/00985F'
+  },
+  {
+    name: 'Google Analytics',
+    src: 'https://cdn.simpleicons.org/googleanalytics/E37400'
+  },
+  {
+    name: 'Mailchimp',
+    src: 'https://cdn.simpleicons.org/mailchimp/FFE01B'
+  },
+  {
+    name: 'Zapier',
+    src: 'https://cdn.simpleicons.org/zapier/FF4A00'
+  }
+];
+
 export function IntegrationsSection() {
   return (
     <section className="py-16 px-6 bg-card">
@@ -73,6 +108,24 @@ export function IntegrationsSection() {
           ))}
         </div>
 
+        <AnimateOnScroll delay={200}>
+          <div className="mt-12 rounded-2xl border border-border bg-background/60 px-6 py-8">
+            <h3 className="text-center text-lg font-semibold text-foreground mb-6">
+              Todas as integrações que você precisa!
+            </h3>
+            <div className="integration-marquee">
+              <div className="integration-marquee__track">
+                {[...integrationLogos, ...integrationLogos].map((logo, index) => (
+                  <div className="integration-marquee__item" key={`${logo.name}-${index}`}>
+                    <img src={logo.src} alt={logo.name} loading="lazy" />
+                    <span>{logo.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimateOnScroll>
+
         <AnimateOnScroll delay={240}>
           <div className="mt-12 flex flex-col items-center gap-6 rounded-2xl border border-border bg-background/70 p-6 text-center">
             <div className="flex flex-wrap justify-center gap-2">
@@ -93,9 +146,18 @@ export function IntegrationsSection() {
                 Se faltar alguma ferramenta estratégica para a sua operação, nós criamos para você.
               </p>
             </div>
-            <Button variant="hero" size="lg">
-              Solicitar Integração
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg">
+                Solicitar Integração
+              </Button>
+              <Button
+                variant="success"
+                size="lg"
+                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+              >
+                Falar com Especialista no WhatsApp
+              </Button>
+            </div>
           </div>
         </AnimateOnScroll>
       </div>
