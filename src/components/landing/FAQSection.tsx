@@ -1,3 +1,10 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 const faqs = [
   {
     q: "Funciona com a minha plataforma?",
@@ -29,14 +36,22 @@ export function FAQSection() {
           Perguntas Frequentes
         </h2>
         
-        <div className="space-y-6">
+        <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-muted p-6 rounded-lg border border-border">
-              <h3 className="font-bold text-lg text-foreground mb-2">{faq.q}</h3>
-              <p className="text-foreground/80">{faq.a}</p>
-            </div>
+            <AccordionItem 
+              key={idx} 
+              value={`item-${idx}`}
+              className="bg-muted px-6 rounded-lg border border-border data-[state=open]:shadow-lg transition-shadow"
+            >
+              <AccordionTrigger className="text-left font-bold text-lg text-foreground hover:no-underline py-6">
+                {faq.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/80 pb-6">
+                {faq.a}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
