@@ -9,13 +9,23 @@ import { IntegrationsSection } from '@/components/landing/IntegrationsSection';
 import { FAQSection } from '@/components/landing/FAQSection';
 import { CTASection } from '@/components/landing/CTASection';
 import { Footer } from '@/components/landing/Footer';
+import { SeoHead } from '@/components/seo/SeoHead';
+import { getPageBySlug } from '@/lib/seo-data';
 
 const Index = () => {
   // Landing page for Único Drop
   const [showVideo, setShowVideo] = useState(false);
+  const page = getPageBySlug('');
 
   return (
     <div className="min-h-screen bg-card">
+      {page && (
+        <SeoHead
+          seo={page.seo}
+          fallbackTitle={page.title}
+          fallbackDescription={page.summary}
+        />
+      )}
       <Header />
       <div className="pt-16">
         <HeroSection onShowVideo={() => setShowVideo(true)} />

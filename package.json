@@ -8,6 +8,10 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
+    "seo:generate": "node scripts/generate-seo-assets.mjs",
+    "seo:verify": "node scripts/seo-verify.mjs",
+    "seo:serve": "node scripts/seo-server.mjs",
+    "prebuild": "npm run seo:verify && npm run seo:generate",
     "preview": "vite preview"
   },
   "dependencies": {
