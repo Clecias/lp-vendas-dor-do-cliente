@@ -1,4 +1,4 @@
-import { Zap, MessageSquare, BarChart3, ArrowRight } from 'lucide-react';
+import { Zap, Package, BarChart3, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 
@@ -9,9 +9,9 @@ const features = [
     desc: "Carrinhos, pedidos recusados e clientes inativos viram dinheiro sem você mover um dedo."
   },
   {
-    icon: MessageSquare,
-    title: "Atendimento no Piloto",
-    desc: "WhatsApp, Email e SMS trabalhando 24/7 com mensagens inteligentes."
+    icon: Package,
+    title: "Rastreio Automático",
+    desc: "Seus clientes recebem atualizações automáticas do pedido via WhatsApp, Email e SMS."
   },
   {
     icon: BarChart3,
@@ -32,7 +32,7 @@ export function SolutionSection() {
             E Se Você Recuperasse 80% Disso... Automaticamente?
           </h2>
           <p className="text-xl mb-12 text-white/95 max-w-3xl mx-auto">
-            O <span className="font-bold">Único Drop</span> é o sistema completo que recupera vendas perdidas, automatiza seu atendimento e mostra seu lucro real — trabalhando 24 horas por dia, 7 dias por semana.
+            O <span className="font-bold">Único Drop</span> é o sistema completo que recupera vendas perdidas, automatiza seu atendimento e mostra seu lucro real, trabalhando 24 horas por dia, 7 dias por semana.
           </p>
         </AnimateOnScroll>
 
