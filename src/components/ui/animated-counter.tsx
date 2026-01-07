@@ -17,9 +17,16 @@ export function AnimatedCounter({ value, duration = 2000, className }: AnimatedC
       return;
     }
 
-    const numericPart = match[1].replace(/[.,]/g, '');
+    const numericPart = match[1];
     const suffix = match[2];
-    const targetNumber = parseInt(numericPart, 10);
+    
+    // Check if it has decimal (like 4.9 or 4,9)
+    const hasDecimal = numericPart.includes('.') || numericPart.includes(',');
+    const decimalSeparator = numericPart.includes(',') ? ',' : '.';
+    
+    // Parse the number properly
+    const normalizedNumber = numericPart.replace(',', '.');
+    const targetNumber = parseFloat(normalizedNumber);
     
     if (isNaN(targetNumber)) {
       setDisplayValue(value);
@@ -36,14 +43,18 @@ export function AnimatedCounter({ value, duration = 2000, className }: AnimatedC
       
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentValue = Math.floor(startValue + (targetNumber - startValue) * easeOutQuart);
+      const currentValue = startValue + (targetNumber - startValue) * easeOutQuart;
       
-      // Format with original separators if needed
-      let formattedValue = currentValue.toString();
-      if (value.includes('mil')) {
-        formattedValue = currentValue.toString();
+      // Format with original format
+      let formattedValue: string;
+      if (hasDecimal) {
+        formattedValue = currentValue.toFixed(1).replace('.', decimalSeparator);
+      } else if (value.includes('mil')) {
+        formattedValue = Math.floor(currentValue).toString();
       } else if (value.includes('M')) {
         formattedValue = (currentValue / 10).toFixed(1).replace('.', ',');
+      } else {
+        formattedValue = Math.floor(currentValue).toString();
       }
       
       setDisplayValue(formattedValue + suffix);
