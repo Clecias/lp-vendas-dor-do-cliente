@@ -8,6 +8,7 @@ import { FAQSection } from '@/components/landing/FAQSection';
 import { CTASection } from '@/components/landing/CTASection';
 
 const Index = () => {
+  // Landing page for Único Drop
   const [showVideo, setShowVideo] = useState(false);
 
   return (
