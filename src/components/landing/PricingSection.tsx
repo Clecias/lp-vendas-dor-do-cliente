@@ -122,25 +122,23 @@ export function PricingSection() {
           </div>
         </AnimateOnScroll>
 
-        <AnimateOnScroll>
-          <div className="text-center">
-            <p className="text-sm text-secondary-foreground/75 mb-8">
-              ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
-            </p>
-            
-            <div className="pt-8 border-t border-white/20">
-              <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
-              <Button 
-                variant="success" 
-                size="xl"
-                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
-              >
-                <MessageCircle className="w-5 h-5" />
-                Falar com Especialista no WhatsApp
-              </Button>
-            </div>
+        <div className="text-center">
+          <p className="text-sm text-secondary-foreground/75 mb-8">
+            ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
+          </p>
+          
+          <div className="pt-8 border-t border-white/20">
+            <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
+            <Button 
+              variant="success" 
+              size="xl"
+              onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+            >
+              <MessageCircle className="w-5 h-5" />
+              Falar com Especialista no WhatsApp
+            </Button>
           </div>
-        </AnimateOnScroll>
+        </div>
       </div>
     </section>
   );
