@@ -19,7 +19,7 @@ export function HeroSection({ onShowVideo }: HeroSectionProps) {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            Pare de Perder R$ 5.000 a R$ 20.000 Por Mês em Vendas Que Já Estavam na Sua Mão
+            Pare de Perder entre R$ 5.000 a R$ 20.000 Por Mês em Vendas no Seu Ecommerce
           </h1>
           
           <p className="text-xl mb-8 max-w-3xl mx-auto text-white/95">
@@ -42,7 +42,7 @@ export function HeroSection({ onShowVideo }: HeroSectionProps) {
           </div>
 
           <p className="text-sm text-white/90">
-            ✓ Resultados em até 24 horas • ✓ Usado por mais de 28mil lojas • ✓ Garantia de 30 dias
+            ✓ Resultados em até 48 horas • ✓ Usado por mais de 28mil lojas • ✓ Garantia de 30 dias
           </p>
         </div>
       </div>
