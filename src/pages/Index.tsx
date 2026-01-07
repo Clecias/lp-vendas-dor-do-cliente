@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Header } from '@/components/landing/Header';
 import { HeroSection } from '@/components/landing/HeroSection';
 import { PainPointsSection } from '@/components/landing/PainPointsSection';
 import { SolutionSection } from '@/components/landing/SolutionSection';
@@ -13,13 +14,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-card">
-      <HeroSection onShowVideo={() => setShowVideo(true)} />
+      <Header />
+      <div className="pt-16">
+        <HeroSection onShowVideo={() => setShowVideo(true)} />
       <PainPointsSection />
       <SolutionSection />
       <TestimonialsSection />
       <PricingSection />
       <FAQSection />
-      <CTASection />
+        <CTASection />
+      </div>
     </div>
   );
 };
