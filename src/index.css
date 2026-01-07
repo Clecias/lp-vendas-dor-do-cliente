@@ -159,6 +159,11 @@ All colors MUST be HSL.
   animation: integration-marquee 26s linear infinite;
 }
 
+.integration-marquee__track--reverse {
+  animation-direction: reverse;
+  animation-duration: 30s;
+}
+
 .integration-marquee__item {
   display: flex;
   align-items: center;

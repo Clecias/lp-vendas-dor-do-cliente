@@ -49,11 +49,21 @@ export function IntegrationsSection() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={200}>
-          <div className="mt-8">
+          <div className="mt-8 space-y-6">
             <div className="integration-marquee">
               <div className="integration-marquee__track">
                 {[...integrationLogos, ...integrationLogos].map((logo, index) => (
-                  <div className="integration-marquee__item" key={`${logo.name}-${index}`}>
+                  <div className="integration-marquee__item" key={`${logo.name}-row1-${index}`}>
+                    <img src={logo.src} alt={logo.name} loading="lazy" />
+                    <span>{logo.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="integration-marquee integration-marquee--reverse">
+              <div className="integration-marquee__track integration-marquee__track--reverse">
+                {[...integrationLogos, ...integrationLogos].map((logo, index) => (
+                  <div className="integration-marquee__item" key={`${logo.name}-row2-${index}`}>
                     <img src={logo.src} alt={logo.name} loading="lazy" />
                     <span>{logo.name}</span>
                   </div>
