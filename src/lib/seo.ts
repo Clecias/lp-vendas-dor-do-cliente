@@ -35,7 +35,8 @@ export interface RedirectRule {
 export const SITE_BASE_URL = 'https://unicodrop.com.br';
 export const SITE_NAME = 'Único Drop';
 export const SITE_TWITTER = '@unicodrop';
-export const DEFAULT_OG_IMAGE = 'https://lovable.dev/opengraph-image-p98pqg.png';
+export const DEFAULT_OG_IMAGE =
+  'https://storage.googleapis.com/gpt-engineer-file-uploads/Qu0Q8nEeNcUkpUtHGIeqPmP3dNE2/uploads/1767803427543-PNGS - LOGO UNICODROP_8.png';
 
 export function getSeoValue<T>(value: T | undefined | null, fallback: T): T {
   if (typeof value === 'string') {

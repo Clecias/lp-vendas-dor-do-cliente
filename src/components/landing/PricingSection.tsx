@@ -61,10 +61,10 @@ export function PricingSection() {
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary-foreground">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-secondary-foreground">
               Escolha o Plano Ideal Para Sua Loja
             </h2>
-            <p className="text-xl text-secondary-foreground/90">
+            <p className="text-base text-secondary-foreground/90">
               Comece a recuperar vendas hoje mesmo
             </p>
           </div>
@@ -80,10 +80,10 @@ export function PricingSection() {
                   </div>
                 )}
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-secondary-foreground">{plan.name}</h3>
+                  <h3 className="text-lg font-bold mb-2 text-secondary-foreground">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-lg text-secondary-foreground/80">R$</span>
-                    <span className="text-4xl font-black text-secondary-foreground">{plan.price}</span>
+                    <span className="text-sm text-secondary-foreground/80">R$</span>
+                    <span className="text-lg font-black text-secondary-foreground">{plan.price}</span>
                     <span className="text-secondary-foreground/80">/mês</span>
                   </div>
                 </div>
@@ -115,8 +115,8 @@ export function PricingSection() {
             <div className="flex flex-col items-center text-center gap-4">
               <Shield className="w-10 h-10 flex-shrink-0 text-white" />
               <div>
-              <p className="font-bold text-xl mb-2 text-white">Garantia Incondicional de 30 Dias</p>
-                <p className="text-lg text-white">Use o sistema por 30 dias completos. Se ele não recuperar mais dinheiro do que o valor da mensalidade, você recebe 100% do seu investimento de volta. Sem perguntas, sem burocracia. O risco é TODO meu.</p>
+              <p className="font-bold text-base mb-2 text-white">Garantia Incondicional de 30 Dias</p>
+                <p className="text-base text-white">Use o sistema por 30 dias completos. Se ele não recuperar mais dinheiro do que o valor da mensalidade, você recebe 100% do seu investimento de volta. Sem perguntas, sem burocracia. O risco é TODO meu.</p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export function PricingSection() {
             </p>
 
             <div className="pt-8 border-t border-white/20">
-              <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
+              <p className="text-base mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
               <Button
                 variant="success"
                 size="xl"

@@ -15,7 +15,8 @@ const redirects = JSON.parse(redirectsRaw);
 
 const port = process.env.SEO_SERVER_PORT || 4174;
 
-const DEFAULT_OG_IMAGE = 'https://lovable.dev/opengraph-image-p98pqg.png';
+const DEFAULT_OG_IMAGE =
+  'https://storage.googleapis.com/gpt-engineer-file-uploads/Qu0Q8nEeNcUkpUtHGIeqPmP3dNE2/uploads/1767803427543-PNGS - LOGO UNICODROP_8.png';
 const SITE_NAME = 'Único Drop';
 const SITE_TWITTER = '@unicodrop';
 const SITE_URL = 'https://unicodrop.com.br';

@@ -32,7 +32,7 @@ export function FAQSection() {
   return (
     <section className="py-16 px-4 sm:px-6 bg-secondary">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-secondary-foreground mb-12">
+        <h2 className="text-xl font-bold text-center text-secondary-foreground mb-12">
           Perguntas Frequentes
         </h2>
         

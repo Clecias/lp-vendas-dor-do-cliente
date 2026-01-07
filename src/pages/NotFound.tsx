@@ -11,7 +11,8 @@ const seoFallback: PageSeo = {
   robotsFollow: "nofollow",
   ogTitle: "Página não encontrada | Único Drop",
   ogDescription: "Não encontramos a página solicitada. Volte para a home da Único Drop.",
-  ogImage: "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogImage:
+    "https://storage.googleapis.com/gpt-engineer-file-uploads/Qu0Q8nEeNcUkpUtHGIeqPmP3dNE2/uploads/1767803427543-PNGS - LOGO UNICODROP_8.png",
   twitterCard: "summary_large_image",
 };
 

@@ -28,10 +28,10 @@ export function SolutionSection() {
     >
       <div className="max-w-6xl mx-auto text-center">
         <AnimateOnScroll>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+          <h2 className="text-xl md:text-2xl font-bold mb-6 text-white">
             E Se Você Recuperasse 80% Disso... Automaticamente?
           </h2>
-          <p className="text-xl mb-12 text-white/95 max-w-3xl mx-auto">
+          <p className="text-base mb-12 text-white/95 max-w-3xl mx-auto">
             O <span className="font-bold">Único Drop</span> é o sistema completo que recupera vendas perdidas, automatiza seu atendimento e mostra seu lucro real, trabalhando 24 horas por dia, 7 dias por semana.
           </p>
         </AnimateOnScroll>
@@ -43,7 +43,7 @@ export function SolutionSection() {
                 <div className="mb-4 flex justify-center">
                   <item.icon className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
+                <h3 className="text-base font-bold mb-3 text-white">{item.title}</h3>
                 <p className="text-white/90">{item.desc}</p>
               </div>
             </AnimateOnScroll>
@@ -51,7 +51,16 @@ export function SolutionSection() {
         </div>
 
         <AnimateOnScroll delay={450}>
-          <Button variant="hero" size="xxl">
+          <Button
+            variant="hero"
+            size="xl"
+            className="
+              w-full sm:w-auto
+              px-5 py-3 sm:px-8 sm:py-4
+              text-sm sm:text-base
+              whitespace-normal
+            "
+          >
             Quero Começar a Recuperar Vendas Hoje
             <ArrowRight className="w-6 h-6" />
           </Button>
