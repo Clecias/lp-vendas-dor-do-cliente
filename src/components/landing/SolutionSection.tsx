@@ -23,7 +23,7 @@ const features = [
 export function SolutionSection() {
   return (
     <section 
-      className="py-16 px-6"
+      className="py-16 px-4 sm:px-6"
       style={{ background: 'linear-gradient(135deg, hsl(204 62% 42%) 0%, hsl(249 64% 24%) 100%)' }}
     >
       <div className="max-w-6xl mx-auto text-center">

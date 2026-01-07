@@ -57,7 +57,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="py-16 px-6 bg-secondary">
+    <section className="py-16 px-4 sm:px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
           <div className="text-center mb-12">
@@ -122,23 +122,35 @@ export function PricingSection() {
           </div>
         </AnimateOnScroll>
 
-        <div className="text-center">
-          <p className="text-sm text-secondary-foreground/75 mb-8">
-            ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
-          </p>
-          
-          <div className="pt-8 border-t border-white/20">
-            <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
-            <Button 
-              variant="success" 
-              size="xl"
-              onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
-            >
-              <MessageCircle className="w-5 h-5" />
-              Falar com Especialista no WhatsApp
-            </Button>
+        <AnimateOnScroll>
+          <div className="text-center">
+            <p className="text-sm text-secondary-foreground/75 mb-8">
+              ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
+            </p>
+
+            <div className="pt-8 border-t border-white/20">
+              <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
+              <Button
+                variant="success"
+                size="xl"
+                className="
+                  w-full sm:w-auto
+                  rounded-full
+                  px-5 py-3 sm:px-8 sm:py-4
+                  inline-flex items-center justify-center gap-2
+                  text-sm sm:text-base
+                  whitespace-normal
+                "
+                onClick={() =>
+                  window.open('https://wa.me/5511999999999', '_blank', 'noopener,noreferrer')
+                }
+              >
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                <span className="leading-tight">Falar com Especialista no WhatsApp</span>
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

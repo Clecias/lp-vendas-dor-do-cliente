@@ -43,7 +43,7 @@ const painPoints = [
 
 export function PainPointsSection() {
   return (
-    <section className="py-16 px-6 bg-muted">
+    <section className="py-16 px-4 sm:px-6 bg-muted">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
           <div className="text-center mb-12">

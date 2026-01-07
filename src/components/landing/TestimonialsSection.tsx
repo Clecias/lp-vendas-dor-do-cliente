@@ -43,7 +43,7 @@ export function TestimonialsSection() {
   const { ref: statsRef, isInView: statsInView } = useIntersectionObserver({ threshold: 0.3 });
 
   return (
-    <section className="py-16 px-6 bg-card">
+    <section className="py-16 px-4 sm:px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
