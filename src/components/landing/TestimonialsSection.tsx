@@ -31,7 +31,7 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "500+", label: "Lojas Ativas" },
+  { value: "28mil+", label: "Lojas" },
   { value: "R$ 2.3M+", label: "Recuperados em 2024" },
   { value: "4.9★", label: "Avaliação Média" }
 ];
@@ -44,7 +44,7 @@ export function TestimonialsSection() {
           Resultados Reais de Quem Já Está Recuperando Vendas
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg">
-          Mais de 500 lojas usando o Único Drop todos os dias
+          Mais de 28 mil lojas usando o Único Drop todos os dias
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">

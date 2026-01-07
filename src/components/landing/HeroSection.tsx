@@ -42,7 +42,7 @@ export function HeroSection({ onShowVideo }: HeroSectionProps) {
           </div>
 
           <p className="text-sm text-white/90">
-            ✓ Resultados em até 24 horas • ✓ Sem necessidade de cartão • ✓ Garantia de 30 dias
+            ✓ Resultados em até 24 horas • ✓ Usado por mais de 28mil lojas • ✓ Garantia de 30 dias
           </p>
         </div>
       </div>
