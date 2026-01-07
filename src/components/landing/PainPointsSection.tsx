@@ -1,5 +1,6 @@
 import { X, Clock, DollarSign, MessageSquare, TrendingUp, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 
 const painPoints = [
   {
@@ -44,46 +45,52 @@ export function PainPointsSection() {
   return (
     <section className="py-16 px-6 bg-muted">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Reconhece Algum Desses Problemas no Seu Negócio?
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Se você respondeu SIM para 2 ou mais, está deixando entre 30% e 40% do seu faturamento na mesa
-          </p>
-        </div>
+        <AnimateOnScroll>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Reconhece Algum Desses Problemas no Seu Negócio?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Se você respondeu SIM para 2 ou mais, está deixando entre 30% e 40% do seu faturamento na mesa
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {painPoints.map((pain, idx) => (
-            <div key={idx} className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition">
-              <div className="mb-4">
-                <pain.icon className="w-10 h-10 text-destructive" />
+            <AnimateOnScroll key={idx} delay={idx * 100}>
+              <div className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition h-full">
+                <div className="mb-4">
+                  <pain.icon className="w-10 h-10 text-destructive" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-3">{pain.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{pain.desc}</p>
+                <div className="bg-destructive/10 text-destructive px-3 py-2 rounded text-sm font-semibold">
+                  💸 Prejuízo: {pain.loss}
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">{pain.title}</h3>
-              <p className="text-muted-foreground text-sm mb-4">{pain.desc}</p>
-              <div className="bg-destructive/10 text-destructive px-3 py-2 rounded text-sm font-semibold">
-                💸 Prejuízo: {pain.loss}
-              </div>
-            </div>
+            </AnimateOnScroll>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-to-r from-destructive/5 to-warning/5 p-8 rounded-xl border border-destructive/20 max-w-3xl mx-auto">
-            <p className="text-2xl font-bold text-foreground mb-3">
-              Somando tudo, você pode estar perdendo
-            </p>
-            <p className="text-5xl font-black mb-3 text-primary">
-              R$ 5.000 a R$ 20.000
-            </p>
-            <p className="text-xl text-foreground mb-4">
-              Por mês. Todos os meses.
-            </p>
-            <Button variant="cta" size="xl">
-              Não Quero Perder Mais Dinheiro
-            </Button>
+        <AnimateOnScroll delay={600}>
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-to-r from-destructive/5 to-warning/5 p-8 rounded-xl border border-destructive/20 max-w-3xl mx-auto">
+              <p className="text-2xl font-bold text-foreground mb-3">
+                Somando tudo, você pode estar perdendo
+              </p>
+              <p className="text-5xl font-black mb-3 text-primary">
+                R$ 5.000 a R$ 20.000
+              </p>
+              <p className="text-xl text-foreground mb-4">
+                Por mês. Todos os meses.
+              </p>
+              <Button variant="cta" size="xl">
+                Não Quero Perder Mais Dinheiro
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
