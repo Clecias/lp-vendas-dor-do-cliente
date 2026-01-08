@@ -167,7 +167,7 @@ All colors MUST be HSL.
 
 .integration-marquee__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   padding: 0.75rem 1.25rem;
   border-radius: 999px;
@@ -186,6 +186,14 @@ All colors MUST be HSL.
   object-fit: contain;
 }
 
+.integration-marquee__category {
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 280px;
+  max-width: 320px;
+  white-space: normal;
+}
+
 @media (max-width: 640px) {
   .integration-marquee__track {
     gap: 1.25rem;
@@ -195,6 +203,11 @@ All colors MUST be HSL.
   .integration-marquee__item {
     padding: 0.5rem 0.9rem;
     font-size: 0.8rem;
+  }
+
+  .integration-marquee__category {
+    min-width: 220px;
+    max-width: 260px;
   }
 
   .integration-marquee__item img {
