@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-8 px-6">
+    <footer className="bg-foreground text-background py-8 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-sm text-center">
           <a href="#" className="hover:underline">Termos de uso</a>

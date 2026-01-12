@@ -43,13 +43,13 @@ export function TestimonialsSection() {
   const { ref: statsRef, isInView: statsInView } = useIntersectionObserver({ threshold: 0.3 });
 
   return (
-    <section className="py-16 px-6 bg-card">
+    <section className="py-16 px-4 sm:px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-center text-foreground mb-4">
             Resultados Reais de Quem Já Está Recuperando Vendas
           </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
+          <p className="text-center text-muted-foreground mb-12 text-sm">
             Mais de 28 mil lojas usando o Único Drop todos os dias
           </p>
         </AnimateOnScroll>
@@ -78,7 +78,7 @@ export function TestimonialsSection() {
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-2xl font-bold mb-1 text-primary">{testimonial.result}</p>
+                  <p className="text-lg font-bold mb-1 text-primary">{testimonial.result}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.period}</p>
                 </div>
 
@@ -94,7 +94,7 @@ export function TestimonialsSection() {
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex items-center gap-6">
                   <div className="text-center px-4">
-                    <p className="text-3xl font-black text-primary">
+                    <p className="text-xl font-black text-primary">
                       {statsInView ? (
                         <AnimatedCounter value={stat.value} duration={2000} />
                       ) : (

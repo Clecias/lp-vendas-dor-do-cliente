@@ -57,14 +57,14 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="py-16 px-6 bg-secondary">
+    <section className="py-16 px-4 sm:px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary-foreground">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-secondary-foreground">
               Escolha o Plano Ideal Para Sua Loja
             </h2>
-            <p className="text-xl text-secondary-foreground/90">
+            <p className="text-base text-secondary-foreground/90">
               Comece a recuperar vendas hoje mesmo
             </p>
           </div>
@@ -80,10 +80,10 @@ export function PricingSection() {
                   </div>
                 )}
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-secondary-foreground">{plan.name}</h3>
+                  <h3 className="text-lg font-bold mb-2 text-secondary-foreground">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-lg text-secondary-foreground/80">R$</span>
-                    <span className="text-4xl font-black text-secondary-foreground">{plan.price}</span>
+                    <span className="text-sm text-secondary-foreground/80">R$</span>
+                    <span className="text-lg font-black text-secondary-foreground">{plan.price}</span>
                     <span className="text-secondary-foreground/80">/mês</span>
                   </div>
                 </div>
@@ -127,16 +127,26 @@ export function PricingSection() {
             <p className="text-sm text-secondary-foreground/75 mb-8">
               ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
             </p>
-            
+
             <div className="pt-8 border-t border-white/20">
-              <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
-              <Button 
-                variant="success" 
+              <p className="text-base mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
+              <Button
+                variant="whatsapp"
                 size="xl"
-                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+                className="
+                  w-full sm:w-auto
+                  rounded-full
+                  px-5 py-3 sm:px-8 sm:py-4
+                  inline-flex items-center justify-center gap-2
+                  text-sm sm:text-base
+                  whitespace-normal
+                "
+                onClick={() =>
+                  window.open('https://wa.me/5511999999999', '_blank', 'noopener,noreferrer')
+                }
               >
-                <MessageCircle className="w-5 h-5" />
-                Falar com Especialista no WhatsApp
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                <span className="leading-tight">Falar com Especialista no WhatsApp</span>
               </Button>
             </div>
           </div>
