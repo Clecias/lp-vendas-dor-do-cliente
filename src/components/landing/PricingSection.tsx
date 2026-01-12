@@ -76,7 +76,11 @@ export function PricingSection() {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {plans.map((plan, idx) => (
             <AnimateOnScroll key={idx} delay={idx * 150}>
-              <div className={`relative bg-white/10 border-2 ${plan.popular ? 'border-primary' : 'border-white/20'} p-6 rounded-2xl h-full flex flex-col`}>
+              <div
+                className={`relative bg-white border-2 ${
+                  plan.popular ? 'border-primary' : 'border-border'
+                } p-6 rounded-2xl h-full flex flex-col`}
+              >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold">
                     Mais Popular
@@ -93,7 +97,7 @@ export function PricingSection() {
                 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {plan.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-start gap-2 text-secondary-foreground/90">
+                    <li key={fIdx} className="flex items-start gap-2 text-muted-foreground">
                       <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -130,7 +134,7 @@ export function PricingSection() {
 
         <AnimateOnScroll>
           <div className="text-center">
-            <p className="text-sm text-secondary-foreground/75 mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
             </p>
 

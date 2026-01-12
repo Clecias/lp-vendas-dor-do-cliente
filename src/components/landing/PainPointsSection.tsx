@@ -59,7 +59,7 @@ export function PainPointsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {painPoints.map((pain, idx) => (
             <AnimateOnScroll key={idx} delay={idx * 100}>
-              <div className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition h-full">
+              <div className="bg-white p-6 rounded-lg border border-border hover:shadow-lg transition h-full">
                 <div className="mb-4">
                   <pain.icon className="w-10 h-10 text-destructive" />
                 </div>
