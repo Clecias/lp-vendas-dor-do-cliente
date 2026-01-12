@@ -43,13 +43,16 @@ export function TestimonialsSection() {
   const { ref: statsRef, isInView: statsInView } = useIntersectionObserver({ threshold: 0.3 });
 
   return (
-    <section className="py-16 px-6 bg-card">
+    <section
+      className="py-16 px-6"
+      style={{ background: 'linear-gradient(90deg, hsl(204 62% 42%) 0%, hsl(196 91% 52%) 100%)' }}
+    >
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
             Resultados Reais de Quem Já Está Recuperando Vendas
           </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
+          <p className="text-center text-white/90 mb-12 text-lg">
             Mais de 28 mil lojas usando o Único Drop todos os dias
           </p>
         </AnimateOnScroll>
@@ -57,7 +60,7 @@ export function TestimonialsSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, idx) => (
             <AnimateOnScroll key={idx} delay={idx * 150}>
-              <div className="bg-muted p-6 rounded-xl border border-border h-full">
+              <div className="bg-white/10 p-6 rounded-xl border border-white/20 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <div 
                     className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-lg"
@@ -66,8 +69,8 @@ export function TestimonialsSection() {
                     {testimonial.initials}
                   </div>
                   <div>
-                    <p className="font-bold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.business}</p>
+                    <p className="font-bold text-white">{testimonial.name}</p>
+                    <p className="text-sm text-white/80">{testimonial.business}</p>
                   </div>
                 </div>
                 
@@ -78,11 +81,11 @@ export function TestimonialsSection() {
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-2xl font-bold mb-1 text-primary">{testimonial.result}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.period}</p>
+                  <p className="text-2xl font-bold mb-1 text-white">{testimonial.result}</p>
+                  <p className="text-sm text-white/80">{testimonial.period}</p>
                 </div>
 
-                <p className="text-foreground/80 italic text-sm">"{testimonial.quote}"</p>
+                <p className="text-white/90 italic text-sm">"{testimonial.quote}"</p>
               </div>
             </AnimateOnScroll>
           ))}
@@ -90,21 +93,21 @@ export function TestimonialsSection() {
 
         <div className="mt-12 text-center" ref={statsRef}>
           <AnimateOnScroll delay={450}>
-            <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-muted px-8 py-4 rounded-lg border border-border">
+            <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-white/10 px-8 py-4 rounded-lg border border-white/20">
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex items-center gap-6">
                   <div className="text-center px-4">
-                    <p className="text-3xl font-black text-primary">
+                    <p className="text-3xl font-black text-white">
                       {statsInView ? (
                         <AnimatedCounter value={stat.value} duration={2000} />
                       ) : (
                         '0'
                       )}
                     </p>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    <p className="text-sm text-white/80">{stat.label}</p>
                   </div>
                   {idx < stats.length - 1 && (
-                    <div className="w-px h-12 bg-border hidden sm:block"></div>
+                    <div className="w-px h-12 bg-white/30 hidden sm:block"></div>
                   )}
                 </div>
               ))}

@@ -14,11 +14,12 @@ export const Header = () => {
           <span className="font-bold text-lg text-foreground">Único Drop</span>
         </div>
         
-        <Button 
+        <Button
           className="text-white font-semibold"
           style={{ background: 'linear-gradient(90deg, #2472b3 0%, #26abe2 100%)' }}
+          asChild
         >
-          Testar Grátis
+          <a href="https://www.unicodrop.com.br/app/?t=cadastrar">Testar Grátis</a>
         </Button>
       </div>
     </header>

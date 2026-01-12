@@ -6,6 +6,7 @@ const plans = [
   {
     name: "Growth",
     price: "119,90",
+    ctaUrl: "https://www.unicodrop.com.br/app/?t=cadastrar",
     features: [
       "Dashboard financeiro",
       "Automação de WhatsApp ilimitada (1 número conectado)",
@@ -24,6 +25,7 @@ const plans = [
   {
     name: "Scale",
     price: "169,90",
+    ctaUrl: "https://www.unicodrop.com.br/app/?t=cadastrar&plano=2",
     popular: true,
     features: [
       "Tudo do plano Growth",
@@ -41,6 +43,7 @@ const plans = [
   {
     name: "Elite",
     price: "289,90",
+    ctaUrl: "https://www.unicodrop.com.br/app/?t=cadastrar&plano=3",
     features: [
       "Tudo do plano Scale",
       "Automação de WhatsApp ilimitada (4 números conectados)",
@@ -57,14 +60,14 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="py-16 px-6 bg-secondary">
+    <section className="py-16 px-4 sm:px-6 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary-foreground">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-foreground">
               Escolha o Plano Ideal Para Sua Loja
             </h2>
-            <p className="text-xl text-secondary-foreground/90">
+            <p className="text-base text-muted-foreground">
               Comece a recuperar vendas hoje mesmo
             </p>
           </div>
@@ -73,24 +76,28 @@ export function PricingSection() {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {plans.map((plan, idx) => (
             <AnimateOnScroll key={idx} delay={idx * 150}>
-              <div className={`relative bg-white/10 border-2 ${plan.popular ? 'border-primary' : 'border-white/20'} p-6 rounded-2xl h-full flex flex-col`}>
+              <div
+                className={`relative bg-white border-2 ${
+                  plan.popular ? 'border-primary' : 'border-border'
+                } p-6 rounded-2xl h-full flex flex-col`}
+              >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold">
                     Mais Popular
                   </div>
                 )}
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-secondary-foreground">{plan.name}</h3>
+                  <h3 className="text-lg font-bold mb-2 text-foreground">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-lg text-secondary-foreground/80">R$</span>
-                    <span className="text-4xl font-black text-secondary-foreground">{plan.price}</span>
-                    <span className="text-secondary-foreground/80">/mês</span>
+                    <span className="text-sm text-muted-foreground">R$</span>
+                    <span className="text-lg font-black text-foreground">{plan.price}</span>
+                    <span className="text-muted-foreground">/mês</span>
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {plan.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-start gap-2 text-secondary-foreground/90">
+                    <li key={fIdx} className="flex items-start gap-2 text-muted-foreground">
                       <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -101,9 +108,12 @@ export function PricingSection() {
                   variant={plan.popular ? "hero" : "outline"} 
                   size="lg" 
                   className="w-full"
+                  asChild
                 >
-                  Começar Agora
-                  <ArrowRight className="w-5 h-5" />
+                  <a href={plan.ctaUrl}>
+                    Começar Agora
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
                 </Button>
               </div>
             </AnimateOnScroll>
@@ -115,8 +125,8 @@ export function PricingSection() {
             <div className="flex flex-col items-center text-center gap-4">
               <Shield className="w-10 h-10 flex-shrink-0 text-white" />
               <div>
-                <p className="font-bold text-xl mb-2 text-white">🛡️ Garantia Incondicional de 30 Dias</p>
-                <p className="text-lg text-white">Use o sistema por 30 dias completos. Se ele não recuperar mais dinheiro do que o valor da mensalidade, você recebe 100% do seu investimento de volta. Sem perguntas, sem burocracia. O risco é TODO meu.</p>
+              <p className="font-bold text-base mb-2 text-white">Garantia Incondicional de 30 Dias</p>
+                <p className="text-base text-white">Use o sistema por 30 dias completos. Se ele não recuperar mais dinheiro do que o valor da mensalidade, você recebe 100% do seu investimento de volta. Sem perguntas, sem burocracia. O risco é TODO meu.</p>
               </div>
             </div>
           </div>
@@ -124,19 +134,29 @@ export function PricingSection() {
 
         <AnimateOnScroll>
           <div className="text-center">
-            <p className="text-sm text-secondary-foreground/75 mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               ✓ Ativação imediata • ✓ Cancele quando quiser • ✓ Suporte em português
             </p>
-            
-            <div className="pt-8 border-t border-white/20">
-              <p className="text-lg mb-4 text-secondary-foreground">Ainda com dúvidas? </p>
-              <Button 
-                variant="success" 
+
+            <div className="pt-8 border-t border-border">
+              <p className="text-base mb-4 text-foreground">Ainda com dúvidas? </p>
+              <Button
+                variant="whatsapp"
                 size="xl"
-                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+                className="
+                  w-full sm:w-auto
+                  rounded-full
+                  px-5 py-3 sm:px-8 sm:py-4
+                  inline-flex items-center justify-center gap-2
+                  text-sm sm:text-base
+                  whitespace-normal
+                "
+                asChild
               >
-                <MessageCircle className="w-5 h-5" />
-                Falar com Especialista no WhatsApp
+                <a href="https://wa.me/5511945109907" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5 shrink-0" />
+                  <span className="leading-tight">Falar com Especialista no WhatsApp</span>
+                </a>
               </Button>
             </div>
           </div>
