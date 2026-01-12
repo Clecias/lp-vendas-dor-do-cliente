@@ -8,7 +8,7 @@ interface HeroSectionProps {
 export function HeroSection({ onShowVideo }: HeroSectionProps) {
   return (
     <section 
-      className="py-16 px-6"
+      className="py-16 px-4 sm:px-6"
       style={{ background: 'linear-gradient(135deg, hsl(249 64% 24%) 0%, hsl(204 62% 42%) 100%)' }}
     >
       <div className="max-w-6xl mx-auto">
@@ -18,23 +18,26 @@ export function HeroSection({ onShowVideo }: HeroSectionProps) {
             Você está perdendo vendas neste exato momento
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 leading-tight text-white">
             Pare de Perder entre R$ 5.000 a R$ 20.000 Por Mês em Vendas no Seu Ecommerce
           </h1>
           
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-white/95">
+          <p className="text-base mb-8 max-w-3xl mx-auto text-white/95">
             Carrinhos abandonados, pedidos recusados e clientes sem resposta estão custando caro para o seu negócio. Enquanto você lê isso, seu concorrente está recuperando essas vendas automaticamente.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button variant="hero" size="xl">
-              Quero Recuperar Minhas Vendas Agora
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="hero" size="xl" className="w-full sm:w-auto whitespace-normal" asChild>
+              <a href="https://www.unicodrop.com.br/app/?t=cadastrar">
+                Quero Recuperar Minhas Vendas Agora
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
             <Button 
               onClick={onShowVideo}
               variant="heroBorder"
               size="xl"
+              className="w-full sm:w-auto whitespace-normal"
             >
               <Play className="w-5 h-5" />
               Ver Como Funciona (2 min)
